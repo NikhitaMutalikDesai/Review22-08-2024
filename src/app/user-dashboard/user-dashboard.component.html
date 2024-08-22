@@ -1,0 +1,6 @@
+<header>
+  <input type="text" placeholder="Search by Name" [(ngModel)]="searchQuery">
+</header>
+<div class="employee-cards">
+  <app-employee-card *ngFor="let employee of filteredEmployees()" [employee]="employee"></app-employee-card>
+</div>

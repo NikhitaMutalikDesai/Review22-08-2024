@@ -1,0 +1,23 @@
+<div class="signup-container">
+  <form (ngSubmit)="onSignup()">
+    <h2>Sign Up</h2>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required>
+    
+    
+    <label for="mob">Mobile:</label>
+    <input type="text" id="mob" [(ngModel)]="mob" name="mob" required>
+    
+    <label for="department">Department:</label>
+    <input type="text" id="department" [(ngModel)]="department" name="department" required>
+    
+    <label for="role">Role:</label>
+    <select id="role" [(ngModel)]="role" name="role" required>
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    
+    <button type="submit" >Sign Up</button>
+  </form>
+</div>

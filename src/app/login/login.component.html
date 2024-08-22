@@ -1,0 +1,20 @@
+
+<div class="login-container">
+  <form (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required>
+    
+    <label for="role">Role:</label>
+    <select id="role" [(ngModel)]="role" name="role" required>
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    
+    <button type="submit">Login</button>
+  </form>
+  
+  <p>Don't have an account?</p>
+  <button (click)="goToSignup()">Create Account</button> <!-- Create Account button -->
+</div>
