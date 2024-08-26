@@ -1,7 +1,8 @@
 <div class="employee-card">
   <h3>{{ employee.name }}</h3>
-  <p>Age: {{ employee.age }}</p>
+  <p>role: {{ employee.role }}</p>
+
   <p>Mobile: {{ employee.mobile }}</p>
   <p>Department: {{ employee.department }}</p>
-  <button *ngIf="employee.role === 'admin'" (click)="delete.emit(employee.id)">Delete</button>
+  <button  (click)="delete.emit(employee.id)">Delete</button>
 </div>

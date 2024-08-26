@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { EmployeeServiceService } from '../services/employee-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +12,14 @@ export class DashboardComponent implements OnInit {
   department = 'user'; // Update based on logged-in user department
   searchQuery = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private employee:EmployeeServiceService) {}
 
   ngOnInit(): void {
-    this.http.get<[]>('http://localhost:3000/employees')
-      .subscribe(data => {
-        this.employees = data.filter((employee:any) => employee.department === this.department);
-      });
+     this.employee.getData().subscribe({
+      next:(res:any)=>{
+        this.employee=res;
+      }
+     });
   }
 
   filteredEmployees() {

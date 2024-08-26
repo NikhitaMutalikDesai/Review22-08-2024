@@ -7,5 +7,5 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EmployeeCardComponent {
   @Input() employee: any;
-  @Output() delete = new EventEmitter<number>();
+  @Output() delete = new EventEmitter<string>();
 }
